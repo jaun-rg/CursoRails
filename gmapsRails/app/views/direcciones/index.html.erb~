@@ -1,0 +1,39 @@
+<h1>Listing direcciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Gmaps</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @direcciones.each do |direccione| %>
+      <tr>
+        <td><%= direccione.address %></td>
+        <td><%= direccione.longitude %></td>
+        <td><%= direccione.latitude %></td>
+        <td><%= direccione.gmaps %></td>
+        <td><%= link_to 'Show', direccione %></td>
+        <td><%= link_to 'Edit', edit_direccione_path(direccione) %></td>
+        <td><%= link_to 'Destroy', direccione, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Direccione', new_direccione_path %>
+
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+

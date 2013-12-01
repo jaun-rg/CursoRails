@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AuthRails</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Conectado como <%= current_user.email %>. No eres t&uacute;?
+    <%= link_to "Log off", destroy_user_session_path, :method => :delete%>
+  <% else %>
+    <%= link_to "Alta", new_user_registration_path %> o
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

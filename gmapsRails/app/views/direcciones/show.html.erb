@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @direccione.address %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @direccione.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @direccione.latitude %>
+</p>
+
+<p>
+  <strong>Gmaps:</strong>
+  <%= @direccione.gmaps %>
+</p>
+
+<%= link_to 'Edit', edit_direccione_path(@direccione) %> |
+<%= link_to 'Back', direcciones_path %>
